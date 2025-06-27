@@ -4,7 +4,7 @@ from fastapi import FastAPI, Request
 from telegram import Bot, Update, ReplyKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters
 
-TELEGRAM_TOKEN = os.environ.get('8153785782:AAHutXmNmen_U6OW_aPLB1fo-lvcLynZLtU')
+TELEGRAM_TOKEN = os.environ.get('TG_TOKEN')
 OPENAI_KEY = os.environ.get('OPENAI_KEY')
 
 app = FastAPI()
