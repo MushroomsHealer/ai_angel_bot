@@ -47,8 +47,9 @@ async def process_webhook(request: Request):
     global app_inited
     data = await request.json()
     update = Update.de_json(data, bot)
-    # Инициализация application (обязательно!)
+    # Инициализация application и bot (обязательно!)
     if not app_inited:
+        await bot.initialize()             # <-- Вот эта строка обязательна для PTB 21+!
         await application.initialize()
         app_inited = True
     await application.process_update(update)
